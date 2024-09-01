@@ -13,9 +13,9 @@ Para executar a aplicação:
 
 OBS:
 
-URL API (.NET8) --> http://localhost:8000/
-URL Angular UI (versão 17) --> http://localhost:4200/
-SQL Server --> Server=localhost;Database=DB_TAREFAS;User Id=sa;Password=SqlServer2019!
-URL RabbitMQ --> http://localhost:15672/
+- URL API (.NET8) --> http://localhost:8000/
+- URL Angular UI (versão 17) --> http://localhost:4200/
+- SQL Server --> Server=localhost;Database=DB_TAREFAS;User Id=sa;Password=SqlServer2019!
+- URL RabbitMQ --> http://localhost:15672/
 User: guest
 Pass: guest
