@@ -1,0 +1,104 @@
+<div class="flex h-screen">
+  <div class="w-[50%]">
+<form (ngSubmit)="onFormSubmit()" [formGroup]="tarefasForm" class="px-4">
+  <h1 class="py-10 font-extrabold text-5xl">
+    Tarefas
+  </h1>
+
+  <div class="mt-2">
+    <label for="descricao" class="font-bold">Descrição</label>
+    <input type="hidden" class="w-full p-2 border-2 rounded-sm mt-2" formControlName="id" id="id" value="0">
+    <input type="text" class="w-full p-2 border-2 rounded-sm mt-2" formControlName="descricao" id="descricao">
+  </div>
+
+  <div class="mt-2">
+    <label for="data" class="font-bold">Agendar para</label>
+    <input type="date" class="w-full p-2 border-2 rounded-sm mt-2" formControlName="data" id="data">
+  </div>
+
+  <div class="mt-2">
+    <label for="status" class="flex items-center font-bold">
+      <input type="checkbox" formControlName="status" id="status" class="h-4 w-4">
+      <span> &nbsp; Ativa</span>
+    </label>
+  </div>
+
+
+  <div class="mt-2" *ngIf="showCriar">
+    <button type="submit" id="criar" class="bg-slate-800 text-white px-4 py-2 rounded-sm w-full">Criar</button>
+  </div>
+
+  <div class="mt-2" *ngIf="showEditar">
+    <button type="submit" id="gravar" class="bg-slate-900 text-white px-4 py-2 rounded-sm w-full">Gravar Edição</button>
+  </div>
+  <div class="mt-2" *ngIf="showCancelar">
+    <button type="button" id="cancelar" class="bg-slate-500 text-white px-4 py-2 rounded-sm w-full" (click)="onInit()">Cancelar</button>
+  </div>
+
+</form>
+
+  </div>
+  <div class="overflow-auto w-[50%]">
+    @if (tarefas$ | async; as tarefas) {
+      
+    @if (tarefas.length > 0) {
+      
+    <ul>
+      @for (item of tarefas; track $index) {
+        <li class="p-2 bg-slate-100 border-b-2 border-slate-200">
+          <span class="font-light text-3xl">{{item.descricao}}</span>
+
+          <div class="flex gap-10 mt-4">
+            <span class="flex items-center">
+              
+
+              <span class="ms-2">Agendada para: {{item.data | date : 'dd/MM/yyyy'}}</span>
+            </span>
+
+
+          </div>
+
+          <div class="flex gap-10 mt-4">
+            <span class="flex items-center">
+              
+
+              <span class="ms-2">
+                Status: @if(item.status){Ativa} 
+                @else{Inativa}
+              
+              </span>
+            </span>
+
+
+          </div>
+
+          <div class="mt-4 flex w-full gap-4">
+
+
+            
+            <button class="bg-slate-50 text-dark py-2 px-4 rounded-sm" type="button" (click)="onEdit(item.id)">
+              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"/>
+              </svg>
+
+            </button>
+            
+            <button class="bg-slate-50 text-dark py-2 px-4 rounded-sm" type="button" (click)="onDelete(item.id)">
+              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"/>
+              </svg>
+              
+
+            </button>
+
+          </div>
+
+        </li>
+      }
+    </ul>
+    } @else {
+    <p>No contacts found ...</p>
+    }
+    }
+  </div>
+</div>

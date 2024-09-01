@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TarefasApi", "TarefasApi\TarefasApi.csproj", "{2C66D9CE-50A0-4D59-BDCE-8AAEE3EF0122}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "TarefasUI", "TarefasUI\TarefasUI.esproj", "{B7C53821-20CF-4286-A780-7DD81EBC3E3C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2C66D9CE-50A0-4D59-BDCE-8AAEE3EF0122} = {2C66D9CE-50A0-4D59-BDCE-8AAEE3EF0122}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C66D9CE-50A0-4D59-BDCE-8AAEE3EF0122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C66D9CE-50A0-4D59-BDCE-8AAEE3EF0122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C66D9CE-50A0-4D59-BDCE-8AAEE3EF0122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C66D9CE-50A0-4D59-BDCE-8AAEE3EF0122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7C53821-20CF-4286-A780-7DD81EBC3E3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7C53821-20CF-4286-A780-7DD81EBC3E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7C53821-20CF-4286-A780-7DD81EBC3E3C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B7C53821-20CF-4286-A780-7DD81EBC3E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7C53821-20CF-4286-A780-7DD81EBC3E3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7C53821-20CF-4286-A780-7DD81EBC3E3C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E2319EB-200D-4610-998D-F405CD2EA5BB}
+	EndGlobalSection
+EndGlobal
