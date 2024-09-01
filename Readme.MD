@@ -9,6 +9,7 @@ Para executar a aplicação:
 5) Quando for criada uma nova tarefa, esta tarefa passará a ser listada do lado direito da tela
 6) Criar tarefas aleatoriamente
 7) Para editar e/ou excluir qualquer tarefa, clicar nos ícones de edição e exclusão que aparecerem nas tarefas listadas ao lado direito da tela
+8) Cada inserção, alteração e/ou exclusão cria uma mensagem na fila do RabbitMQ. Faça várias interações para gerar bastante mensagens.  Após feito isso utilize a API "http://localhost:8000/api/Tarefa/getMessages" para consumir as mensagens geradas.
 
 
 OBS:
